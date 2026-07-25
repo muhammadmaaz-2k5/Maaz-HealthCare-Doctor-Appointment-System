@@ -3,6 +3,7 @@ import "./globals.css";
 import { Plus_Jakarta_Sans as FontSans } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 
+import { AppwritePing } from "@/components/AppwritePing";
 import { LoadingProvider } from "@/components/GlobalLoadingProvider";
 import { cn } from "@/lib/utils";
 
@@ -88,6 +89,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
+          <AppwritePing />
           <LoadingProvider>{children}</LoadingProvider>
         </ThemeProvider>
       </body>

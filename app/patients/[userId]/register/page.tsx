@@ -33,7 +33,7 @@ const Register = async ({ params: { userId } }: SearchParamProps) => {
 
   return (
     <div className={Theme.layout.screen}>
-      <section className="remove-scrollbar container">
+      <section className={Theme.layout.container}>
         <div className={Theme.layout.subContainerRegister}>
           <Link href="/">
             <img
