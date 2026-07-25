@@ -47,7 +47,7 @@ const AdminPage = () => {
 
   return (
     <div className={Theme.layout.adminContainer}>
-      <header className={Theme.header.adminHeader}>
+      <header className="sticky top-0 z-30 mx-4 flex items-center justify-between rounded-2xl border border-green-100 bg-white px-6 py-4 shadow-lg shadow-green-950/5 sm:mx-8 xl:mx-12">
         <Link href="/">
           <img
             src="/assets/icons/logo-full.svg"
@@ -60,18 +60,23 @@ const AdminPage = () => {
             style={{ height: "auto", width: "auto" }}
           />
         </Link>
-        <p className={Theme.header.adminTitle}>Admin Dashboard</p>
+        <div className="flex items-center gap-4">
+          <p className="text-18-bold text-green-900">Admin Dashboard</p>
+          <span className="hidden rounded-full bg-green-100 px-3 py-1 text-12-semibold text-green-800 sm:inline-block">
+            Clinic Admin
+          </span>
+        </div>
       </header>
 
       <main className="admin-main">
-        <section className={Theme.header.sectionHeaderCompact}>
-          <h1 className={Theme.header.pageHeader}>Welcome 👋</h1>
-          <p className={Theme.header.pageSubtitle}>
+        <section className="w-full space-y-2">
+          <h1 className="text-32-bold text-green-900 tracking-tight">Welcome 👋</h1>
+          <p className="text-16-regular text-slate-600">
             Start the day with managing new appointments
           </p>
         </section>
 
-        <section className={Theme.card.statContainer}>
+        <section className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 xl:gap-10">
           <StatCard
             type="appointments"
             count={appointments.scheduledCount}
@@ -92,15 +97,18 @@ const AdminPage = () => {
           />
         </section>
 
-        <DataTable
-          columns={Columns({
-            openModal,
-            isModalOpen,
-            selectedPatientId,
-            closeModal,
-          })}
-          data={appointments.documents}
-        />
+        <section className="w-full space-y-4">
+          <h2 className="text-18-bold text-green-800">Recent Appointments</h2>
+          <DataTable
+            columns={Columns({
+              openModal,
+              isModalOpen,
+              selectedPatientId,
+              closeModal,
+            })}
+            data={appointments.documents}
+          />
+        </section>
       </main>
 
       {isModalOpen && (

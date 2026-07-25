@@ -109,6 +109,27 @@ const Home = ({ searchParams }: SearchParamProps) => {
               </Button>
             </div>
 
+            <div className="mt-8 w-full max-w-[480px]">
+              <div className="rounded-xl border-2 border-dashed border-green-300 bg-green-50/60 p-5 text-center">
+                <p className="text-14-semibold text-green-800">Admin Login</p>
+                <p className="mt-2 text-12-regular text-slate-600">
+                  Passkey:{" "}
+                  <span className="font-mono text-16-semibold text-green-900">
+                    {process.env.NEXT_PUBLIC_ADMIN_PASSKEY || "123123"}
+                  </span>
+                </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    startTransition(() => router.push("/?admin=true"));
+                  }}
+                  className="mt-4 w-full rounded-lg border border-green-200 bg-white px-4 py-2.5 text-14-semibold text-green-800 shadow-sm transition-all hover:bg-green-100 hover:text-green-900"
+                >
+                  Open Admin Panel
+                </button>
+              </div>
+            </div>
+
             <div className="mt-12 flex w-full flex-col items-center gap-3">
               <p className="text-14-regular text-slate-500">
                 © 2024 MaazPulse

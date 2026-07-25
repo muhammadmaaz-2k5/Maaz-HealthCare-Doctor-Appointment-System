@@ -87,7 +87,7 @@ export const PasskeyModal = () => {
             To access the admin page, please enter the passkey.
           </AlertDialogDescription>
         </AlertDialogHeader>
-        <div>
+        <div className="space-y-4">
           <InputOTP
             maxLength={6}
             value={passkey}
@@ -103,8 +103,15 @@ export const PasskeyModal = () => {
             </InputOTPGroup>
           </InputOTP>
 
+          <div className="rounded-md bg-green-50 px-4 py-3 text-center">
+            <p className="text-12-regular text-slate-600">Admin Passkey</p>
+            <p className="text-18-bold text-green-900">
+              {process.env.NEXT_PUBLIC_ADMIN_PASSKEY || "123123"}
+            </p>
+          </div>
+
           {error && (
-            <p className="shad-error text-14-regular mt-4 flex justify-center text-red-500">
+            <p className="shad-error text-14-regular flex justify-center text-red-500">
               {error}
             </p>
           )}
