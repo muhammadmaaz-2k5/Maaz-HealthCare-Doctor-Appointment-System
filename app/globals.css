@@ -95,7 +95,11 @@
 
   /* ==== FORM */
   .radio-group {
-    @apply flex h-full flex-1 items-center gap-2 rounded-md border border-dashed border-green-300 bg-green-50/30 p-3 text-slate-800;
+    @apply flex h-full flex-1 items-center gap-2 rounded-md border border-dashed border-green-300 bg-green-50/30 p-3 text-slate-800 transition-all;
+  }
+
+  .radio-group [data-state="checked"] {
+    @apply border-green-500 bg-green-100;
   }
 
   .checkbox-label {

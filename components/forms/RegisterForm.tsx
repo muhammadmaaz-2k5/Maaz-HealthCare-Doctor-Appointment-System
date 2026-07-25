@@ -219,23 +219,23 @@ const RegisterForm = ({ user, patient }: RegisterFormProps) => {
                 label="Gender"
                 renderSkeleton={(field) => (
                   <FormControl>
-                    <RadioGroup
-                      className="flex h-11 gap-6 xl:justify-between"
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      {GenderOptions.map((option, i) => (
-                        <div key={option + i} className="radio-group text-slate-800">
-                          <RadioGroupItem value={option} id={option} />
-                          <Label
-                            htmlFor={option}
-                            className="cursor-pointer font-medium text-slate-800"
-                          >
-                            {option}
-                          </Label>
-                        </div>
-                      ))}
-                    </RadioGroup>
+                  <RadioGroup
+                    className="flex h-11 gap-6 xl:justify-between"
+                    onValueChange={field.onChange}
+                    value={field.value}
+                  >
+                    {GenderOptions.map((option, i) => (
+                      <div key={option + i} className="radio-group text-slate-800">
+                        <RadioGroupItem value={option} id={option} />
+                        <Label
+                          htmlFor={option}
+                          className="cursor-pointer font-medium text-slate-800"
+                        >
+                          {option}
+                        </Label>
+                      </div>
+                    ))}
+                  </RadioGroup>
                   </FormControl>
                 )}
               />
