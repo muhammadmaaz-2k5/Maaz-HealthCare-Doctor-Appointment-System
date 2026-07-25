@@ -103,7 +103,7 @@ export const Columns = ({
           <div>
             <p className={Theme.text.doctorName}>Dr. {doctor?.name || appointment.primaryPhysician}</p>
             {doctor?.specialty && (
-              <p className="text-12-regular text-dark-600">{doctor.specialty}</p>
+              <p className="text-12-regular text-slate-500">{doctor.specialty}</p>
             )}
           </div>
         </div>

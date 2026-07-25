@@ -74,7 +74,7 @@ export function DataTable<TData, TValue>({
   return (
     <div className="data-table">
       <Table className="shad-table">
-        <TableHeader className=" bg-dark-200">
+        <TableHeader className="bg-green-50/90 border-b border-green-200 text-green-900">
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id} className="shad-table-row-header">
               {headerGroup.headers.map((header) => {

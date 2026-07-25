@@ -83,12 +83,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-dark-300 font-sans antialiased",
+          "min-h-screen bg-white text-slate-800 font-sans antialiased",
           fontSans.variable
         )}
         suppressHydrationWarning
       >
-        <ThemeProvider attribute="class" defaultTheme="dark">
+        <ThemeProvider attribute="class" defaultTheme="light">
           <AppwritePing />
           <LoadingProvider>{children}</LoadingProvider>
         </ThemeProvider>

@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ========================================== TAILWIND STYLES */
+/* ========================================== WHITE & GREEN HEALTHCARE THEME */
 @layer base {
   /* Remove scrollbar */
   .remove-scrollbar::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
-    border-radius: 0px;
+    width: 6px;
+    height: 6px;
+    border-radius: 4px;
   }
 
   .remove-scrollbar::-webkit-scrollbar-track {
@@ -16,20 +16,19 @@
   }
 
   .remove-scrollbar::-webkit-scrollbar-thumb {
-    background: transparent;
-    border-radius: 0px;
+    background: #dcfce7;
+    border-radius: 4px;
   }
 
   .remove-scrollbar::-webkit-scrollbar-thumb:hover {
-    /* background: #1e2238; */
-    background: transparent;
+    background: #22c55e;
   }
 }
 
 @layer utilities {
   /* ===== UTILITIES */
   .sidebar {
-    @apply remove-scrollbar w-full max-w-72 flex-col overflow-auto bg-black-800 px-7 py-10;
+    @apply remove-scrollbar w-full max-w-72 flex-col overflow-auto bg-white border-r border-green-100 px-7 py-10 shadow-sm;
   }
 
   .left-sidebar {
@@ -41,23 +40,23 @@
   }
 
   .clip-text {
-    @apply bg-clip-text text-transparent;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-500;
   }
 
   .bg-image {
-    @apply bg-black-900 bg-light-rays bg-cover bg-no-repeat;
+    @apply bg-green-50/40 bg-cover bg-no-repeat;
   }
 
   .header {
-    @apply text-32-bold md:text-36-bold;
+    @apply text-32-bold md:text-36-bold text-green-900 tracking-tight;
   }
 
   .sub-header {
-    @apply text-18-bold md:text-24-bold;
+    @apply text-18-bold md:text-24-bold text-green-800;
   }
 
   .container {
-    @apply relative flex-1 overflow-y-auto px-[5%];
+    @apply relative flex-1 overflow-y-auto px-[3%] sm:px-[5%];
   }
 
   .sub-container {
@@ -65,11 +64,11 @@
   }
 
   .side-img {
-    @apply hidden h-full object-cover md:block;
+    @apply hidden h-full object-cover md:block border-l border-green-100 shadow-xl;
   }
 
   .copyright {
-    @apply text-14-regular justify-items-end text-center text-dark-600 xl:text-left;
+    @apply text-14-regular justify-items-end text-center text-slate-500 xl:text-left;
   }
 
   /* ==== SUCCESS */
@@ -78,12 +77,12 @@
   }
 
   .request-details {
-    @apply flex w-full flex-col items-center gap-8 border-y-2 border-dark-400 py-8 md:w-fit md:flex-row;
+    @apply flex w-full flex-col items-center gap-8 border-y-2 border-green-100 py-8 md:w-fit md:flex-row;
   }
 
   /* ===== ADMIN */
   .admin-header {
-    @apply sticky top-3 z-20 mx-3 flex items-center justify-between rounded-2xl bg-dark-200 px-[5%] py-5 shadow-lg xl:px-12;
+    @apply sticky top-3 z-20 mx-3 flex items-center justify-between rounded-2xl bg-white border border-green-100 px-[5%] py-5 shadow-lg shadow-green-950/5 xl:px-12;
   }
 
   .admin-main {
@@ -96,35 +95,35 @@
 
   /* ==== FORM */
   .radio-group {
-    @apply flex h-full flex-1 items-center gap-2 rounded-md border border-dashed border-dark-500 bg-dark-400 p-3;
+    @apply flex h-full flex-1 items-center gap-2 rounded-md border border-dashed border-green-300 bg-green-50/30 p-3 text-slate-800;
   }
 
   .checkbox-label {
-    @apply cursor-pointer text-sm font-medium text-dark-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70 md:leading-none;
+    @apply cursor-pointer text-sm font-medium text-slate-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70 md:leading-none;
   }
 
   /* ==== File Upload */
   .file-upload {
-    @apply text-12-regular flex cursor-pointer  flex-col items-center justify-center gap-3 rounded-md border border-dashed border-dark-500 bg-dark-400 p-5;
+    @apply text-12-regular flex cursor-pointer flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed border-green-300 bg-green-50/50 hover:bg-green-50 transition-all p-6;
   }
 
   .file-upload_label {
-    @apply flex flex-col justify-center gap-2 text-center text-dark-600;
+    @apply flex flex-col justify-center gap-2 text-center text-slate-600;
   }
 
   /* ==== Stat Card */
   .stat-card {
-    @apply flex flex-1 flex-col gap-6 rounded-2xl bg-cover p-6 shadow-lg;
+    @apply flex flex-1 flex-col gap-6 rounded-2xl bg-white border border-green-100 p-6 shadow-md hover:shadow-lg transition-all;
   }
 
   /* ==== Status Badge */
   .status-badge {
-    @apply flex w-fit items-center gap-2 rounded-full px-4 py-2;
+    @apply flex w-fit items-center gap-2 rounded-full px-4 py-1.5 font-medium text-sm;
   }
 
   /* Data Table */
   .data-table {
-    @apply z-10 w-full overflow-hidden rounded-lg border border-dark-400 shadow-lg;
+    @apply z-10 w-full overflow-hidden rounded-xl border border-green-200 bg-white shadow-lg shadow-green-950/5;
   }
 
   .table-actions {
@@ -142,72 +141,72 @@
 
   /* ===== TYPOGRAPHY */
   .text-36-bold {
-    @apply text-[36px] leading-[40px] font-bold;
+    @apply text-[36px] leading-[40px] font-bold text-slate-900;
   }
 
   .text-24-bold {
-    @apply text-[24px] leading-[28px] font-bold;
+    @apply text-[24px] leading-[28px] font-bold text-slate-900;
   }
 
   .text-32-bold {
-    @apply text-[32px] leading-[36px] font-bold;
+    @apply text-[32px] leading-[36px] font-bold text-slate-900;
   }
 
   .text-18-bold {
-    @apply text-[18px] leading-[24px] font-bold;
+    @apply text-[18px] leading-[24px] font-bold text-slate-900;
   }
 
   .text-16-semibold {
-    @apply text-[16px] leading-[20px] font-semibold;
+    @apply text-[16px] leading-[20px] font-semibold text-slate-800;
   }
 
   .text-16-regular {
-    @apply text-[16px] leading-[20px] font-normal;
+    @apply text-[16px] leading-[20px] font-normal text-slate-700;
   }
 
   .text-14-medium {
-    @apply text-[14px] leading-[18px] font-medium;
+    @apply text-[14px] leading-[18px] font-medium text-slate-700;
   }
 
   .text-14-regular {
-    @apply text-[14px] leading-[18px] font-normal;
+    @apply text-[14px] leading-[18px] font-normal text-slate-600;
   }
 
   .text-12-regular {
-    @apply text-[12px] leading-[16px] font-normal;
+    @apply text-[12px] leading-[16px] font-normal text-slate-500;
   }
 
   .text-12-semibold {
-    @apply text-[12px] leading-[16px] font-semibold;
+    @apply text-[12px] leading-[16px] font-semibold text-slate-700;
   }
 
-  /* =====  SHADCN OVERRIDES */
+  /* ===== SHADCN OVERRIDES (White & Green Theme) */
   .shad-primary-btn {
-    @apply bg-green-500 text-white !important;
+    @apply bg-green-600 hover:bg-green-700 text-white font-semibold shadow-md shadow-green-600/20 rounded-lg py-3 transition-all !important;
   }
 
   .shad-danger-btn {
-    @apply bg-red-700 text-white !important;
+    @apply bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg !important;
   }
 
   .shad-gray-btn {
-    @apply border border-dark-500 cursor-pointer bg-dark-400 text-white !important;
+    @apply border border-green-200 cursor-pointer bg-green-50 text-green-800 hover:bg-green-100 font-medium !important;
   }
 
   .shad-input-label {
-    @apply text-14-medium text-dark-700  !important;
+    @apply text-14-medium text-slate-700 font-semibold mb-1 !important;
   }
 
   .shad-input {
-    @apply bg-dark-400 placeholder:text-dark-600 border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
+    @apply bg-white text-slate-800 placeholder:text-slate-400 border border-green-200 h-11 focus:border-green-500 focus-visible:ring-1 focus-visible:ring-green-500 rounded-lg !important;
   }
 
   .shad-input-icon {
-    @apply bg-dark-400 placeholder:text-dark-600 border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
+    @apply bg-white text-slate-800 placeholder:text-slate-400 border border-green-200 h-11 focus:border-green-500 focus-visible:ring-1 focus-visible:ring-green-500 rounded-lg !important;
   }
 
   .shad-textArea {
-    @apply bg-dark-400 placeholder:text-dark-600 border-dark-500 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
+    @apply bg-white text-slate-800 placeholder:text-slate-400 border border-green-200 focus:border-green-500 focus-visible:ring-1 focus-visible:ring-green-500 rounded-lg !important;
   }
 
   .shad-combobox-item {
@@ -219,15 +218,15 @@
   }
 
   .shad-select-trigger {
-    @apply bg-dark-400  placeholder:text-dark-600 border-dark-500 h-11 focus:ring-0 focus:ring-offset-0 !important;
+    @apply bg-white text-slate-800 placeholder:text-slate-400 border border-green-200 h-11 focus:ring-1 focus:ring-green-500 rounded-lg !important;
   }
 
   .shad-select-content {
-    @apply bg-dark-400 border-dark-500 !important;
+    @apply bg-white border border-green-200 text-slate-800 shadow-xl rounded-lg !important;
   }
 
   .shad-dialog {
-    @apply bg-dark-400 border-dark-500 !important;
+    @apply bg-white border border-green-200 text-slate-800 shadow-2xl rounded-2xl !important;
   }
 
   .shad-dialog button {
@@ -235,19 +234,19 @@
   }
 
   .shad-error {
-    @apply text-red-400 !important;
+    @apply text-red-500 text-xs mt-1 !important;
   }
 
   .shad-table {
-    @apply rounded-lg overflow-hidden !important;
+    @apply rounded-xl overflow-hidden border border-green-200 bg-white !important;
   }
 
   .shad-table-row-header {
-    @apply border-b border-dark-400 text-light-200 hover:bg-transparent !important;
+    @apply border-b border-green-200 bg-green-50/80 text-green-900 font-bold uppercase text-xs hover:bg-green-50/80 !important;
   }
 
   .shad-table-row {
-    @apply border-b border-dark-400 text-light-200 !important;
+    @apply border-b border-gray-100 text-slate-800 hover:bg-green-50/40 transition-colors !important;
   }
 
   .shad-otp {
@@ -255,32 +254,33 @@
   }
 
   .shad-otp-slot {
-    @apply text-36-bold justify-center flex border border-dark-500 rounded-lg size-16 gap-4 !important;
+    @apply text-24-bold justify-center flex border border-green-300 rounded-lg size-14 bg-white text-green-900 shadow-sm !important;
   }
 
   .shad-alert-dialog {
-    @apply space-y-5 bg-dark-400 border-dark-500 outline-none !important;
+    @apply space-y-5 bg-white border border-green-200 rounded-2xl text-slate-800 shadow-2xl outline-none !important;
   }
 
   .shad-sheet-content button {
-    @apply top-2 focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+    @apply top-2 focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none !important;
   }
 
-  /* =====  REACT PHONE NUMBER INPUT OVERRIDES */
+  /* ===== REACT PHONE NUMBER INPUT OVERRIDES */
   .input-phone {
-    @apply mt-2 h-11 rounded-md px-3 text-sm border bg-dark-400 placeholder:text-dark-600 border-dark-500 !important;
+    @apply mt-1 h-11 rounded-lg px-3 text-sm border border-green-200 bg-white text-slate-800 placeholder:text-slate-400 focus-within:border-green-500 shadow-sm !important;
   }
 
-  /* =====  REACT DATE PICKER OVERRIDES */
+  /* ===== REACT DATE PICKER OVERRIDES */
   .date-picker {
-    @apply overflow-hidden border-transparent w-full placeholder:text-dark-600  h-11 text-14-medium rounded-md px-3 outline-none !important;
+    @apply overflow-hidden border border-green-200 bg-white text-slate-800 w-full placeholder:text-slate-400 h-11 text-14-medium rounded-lg px-3 focus:border-green-500 outline-none shadow-sm !important;
   }
 }
 
-/* =====  REACT-DATEPICKER OVERRIDES */
+/* ===== REACT-DATEPICKER OVERRIDES (White & Green Theme) */
 .react-datepicker-wrapper.date-picker {
   display: flex;
   align-items: center;
+  border: none !important;
 }
 
 .react-datepicker,
@@ -290,61 +290,77 @@
 .react-datepicker__day-name,
 .react-datepicker__day,
 .react-datepicker-time__header {
-  background-color: #1a1d21 !important;
-  border-color: #363a3d !important;
-  color: #abb8c4 !important;
+  background-color: #ffffff !important;
+  border-color: #bbf7d0 !important;
+  color: #1e293b !important;
+}
+
+.react-datepicker__header {
+  background-color: #f0fdf4 !important;
+  border-bottom: 1px solid #bbf7d0 !important;
 }
 
 .react-datepicker__current-month,
 .react-datepicker__day-name,
 .react-datepicker-time__header {
-  color: #ffffff !important;
+  color: #15803d !important;
+  font-weight: 600 !important;
 }
 
 .react-datepicker__triangle {
-  fill: #1a1d21 !important;
-  color: #1a1d21 !important;
-  stroke: #1a1d21 !important;
+  fill: #ffffff !important;
+  color: #ffffff !important;
+  stroke: #bbf7d0 !important;
 }
 
-.react-datepicker__time-list-item:hover {
-  background-color: #363a3d !important;
+.react-datepicker__time-list-item:hover,
+.react-datepicker__day:hover {
+  background-color: #dcfce7 !important;
+  color: #15803d !important;
 }
 
 .react-datepicker__input-container input {
-  background-color: #1a1d21 !important;
+  background-color: transparent !important;
   width: 100%;
+  color: #1e293b;
   outline: none;
+  font-weight: 500;
 }
 
-.react-datepicker__day--selected {
-  background-color: #24ae7c !important;
-  color: #ffffff !important;
-  border-radius: 4px;
-}
-
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected,
 .react-datepicker__time-list-item--selected {
-  background-color: #24ae7c !important;
+  background-color: #16a34a !important;
+  color: #ffffff !important;
+  font-weight: bold;
+  border-radius: 6px;
 }
 
 .react-datepicker__time-container {
-  border-left: 1px solid #363a3d !important;
+  border-left: 1px solid #bbf7d0 !important;
 }
 
 .react-datepicker__time-list-item {
   display: flex !important;
   align-items: center !important;
+  color: #1e293b !important;
 }
 
-/* =====  REACT PHONE NUMBER INPUT OVERRIDES */
+/* ===== REACT PHONE NUMBER INPUT OVERRIDES (White & Green Theme) */
 .PhoneInputInput {
   outline: none;
-  margin-left: 4px;
-  background: #1a1d21;
+  margin-left: 8px;
+  background: transparent;
   font-size: 14px;
   font-weight: 500;
+  color: #1e293b;
 }
 
 .PhoneInputInput::placeholder {
-  color: #1a1d21;
+  color: #94a3b8;
+}
+
+.PhoneInputCountrySelect {
+  color: #1e293b;
+  background: #ffffff;
 }

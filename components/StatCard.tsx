@@ -28,10 +28,10 @@ export const StatCard = ({ count = 0, label, icon, type }: StatCardProps) => {
           loading="lazy"
           decoding="async"
         />
-        <h2 className="text-32-bold text-white">{count}</h2>
+        <h2 className="text-32-bold text-slate-900">{count}</h2>
       </div>
 
-      <p className="text-14-regular">{label}</p>
+      <p className="text-14-medium text-slate-600">{label}</p>
     </div>
   );
 };

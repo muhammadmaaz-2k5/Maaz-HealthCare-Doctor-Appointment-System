@@ -163,7 +163,7 @@ const RegisterForm = ({ user, patient }: RegisterFormProps) => {
 
         <section className="space-y-6">
           <div className="mb-9 space-y-1">
-            <h2 className="sub-header text-dark-700">Personal Information</h2>
+            <h2 className="sub-header text-green-800">Personal Information</h2>
           </div>
 
           {/* NAME */}
@@ -224,11 +224,11 @@ const RegisterForm = ({ user, patient }: RegisterFormProps) => {
                     defaultValue={field.value}
                   >
                     {GenderOptions.map((option, i) => (
-                      <div key={option + i} className="radio-group text-white">
+                      <div key={option + i} className="radio-group text-slate-800">
                         <RadioGroupItem value={option} id={option} />
                         <Label
                           htmlFor={option}
-                          className="cursor-pointer text-white"
+                          className="cursor-pointer font-medium text-slate-800"
                         >
                           {option}
                         </Label>
@@ -281,7 +281,7 @@ const RegisterForm = ({ user, patient }: RegisterFormProps) => {
 
         <section className="space-y-6">
           <div className="mb-9 space-y-1">
-            <h2 className="sub-header text-dark-700">Medical Information</h2>
+            <h2 className="sub-header text-green-800">Medical Information</h2>
           </div>
 
           {/* PRIMARY CARE PHYSICIAN */}
@@ -305,9 +305,9 @@ const RegisterForm = ({ user, patient }: RegisterFormProps) => {
                     decoding="async"
                   />
                   <div className="flex flex-col text-left">
-                    <p className="font-medium text-white">Dr. {doctor.name}</p>
+                    <p className="font-bold text-slate-900">Dr. {doctor.name}</p>
                     {doctor.specialty && (
-                      <p className="text-xs text-dark-600">{doctor.specialty}</p>
+                      <p className="text-xs text-slate-500">{doctor.specialty}</p>
                     )}
                   </div>
                 </div>
@@ -375,7 +375,7 @@ const RegisterForm = ({ user, patient }: RegisterFormProps) => {
 
         <section className="space-y-6">
           <div className="mb-9 space-y-1">
-            <h2 className="sub-header text-dark-700">
+            <h2 className="sub-header text-green-800">
               Identification and Verfication
             </h2>
           </div>
@@ -416,7 +416,7 @@ const RegisterForm = ({ user, patient }: RegisterFormProps) => {
                 {patient?.identificationDocumentUrl &&
                   (!field.value || field.value.length === 0) && (
                     <div className="mt-4 flex flex-col items-start gap-2">
-                      <span className="text-xs text-dark-600">
+                      <span className="text-xs text-slate-500">
                         Previously uploaded document:
                       </span>
                       <img
@@ -449,7 +449,7 @@ const RegisterForm = ({ user, patient }: RegisterFormProps) => {
 
         <section className="space-y-6">
           <div className="mb-9 space-y-1">
-            <h2 className="sub-header text-dark-700">Consent and Privacy</h2>
+            <h2 className="sub-header text-green-800">Consent and Privacy</h2>
           </div>
 
           <CustomFormField

@@ -76,14 +76,14 @@ export const PatientModal: React.FC<PatientModalProps> = ({
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 text-dark-700">
-      <div className="max-h-full w-full max-w-lg overflow-y-auto rounded-lg bg-gray-900 p-6 shadow-lg">
-        <div className="mb-4 flex items-center justify-between">
-          <h2 className="font-mono text-xl font-semibold underline">
-            Patient Details
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 backdrop-blur-sm text-slate-800">
+      <div className="max-h-full w-full max-w-lg overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl border border-green-200">
+        <div className="mb-4 flex items-center justify-between border-b border-green-100 pb-3">
+          <h2 className="font-sans text-xl font-bold text-green-900">
+            Patient Medical Profile
           </h2>
           <button
-            className="text-gray-200 hover:text-gray-700"
+            className="text-slate-400 hover:text-green-600 text-2xl font-bold"
             onClick={closeModal}
           >
             &times;

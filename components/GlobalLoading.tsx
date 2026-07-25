@@ -7,13 +7,13 @@ export default function GlobalLoading({
   text?: string;
 }) {
   return (
-    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/60 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white/85 backdrop-blur-md">
       <img
         src="/assets/icons/loader.svg"
         alt="loader"
         width={48}
         height={48}
-        className="mb-4 animate-spin"
+        className="mb-4 animate-spin filter brightness-90 sepia md:hue-rotate-90"
         style={{
           width: 48,
           height: 48,
@@ -23,7 +23,7 @@ export default function GlobalLoading({
         loading="eager"
         decoding="async"
       />
-      <span className="animate-pulse text-lg font-semibold text-white">
+      <span className="animate-pulse text-lg font-bold text-green-800">
         {text}
       </span>
     </div>

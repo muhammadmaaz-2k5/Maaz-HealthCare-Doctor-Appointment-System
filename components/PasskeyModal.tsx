@@ -70,7 +70,7 @@ export const PasskeyModal = () => {
     <AlertDialog open={open} onOpenChange={setOpen}>
       <AlertDialogContent className="shad-alert-dialog">
         <AlertDialogHeader>
-          <AlertDialogTitle className="flex items-start justify-between text-dark-700">
+          <AlertDialogTitle className="flex items-start justify-between text-green-900 font-bold">
             Admin Access Verification
             <img
               src="/assets/icons/close.svg"
@@ -94,12 +94,12 @@ export const PasskeyModal = () => {
             onChange={(value) => setPasskey(value)}
           >
             <InputOTPGroup className="shad-otp">
-              <InputOTPSlot className="shad-otp-slot text-white" index={0} />
-              <InputOTPSlot className="shad-otp-slot text-white" index={1} />
-              <InputOTPSlot className="shad-otp-slot text-white" index={2} />
-              <InputOTPSlot className="shad-otp-slot text-white" index={3} />
-              <InputOTPSlot className="shad-otp-slot text-white" index={4} />
-              <InputOTPSlot className="shad-otp-slot text-white" index={5} />
+              <InputOTPSlot className="shad-otp-slot text-green-900 font-extrabold" index={0} />
+              <InputOTPSlot className="shad-otp-slot text-green-900 font-extrabold" index={1} />
+              <InputOTPSlot className="shad-otp-slot text-green-900 font-extrabold" index={2} />
+              <InputOTPSlot className="shad-otp-slot text-green-900 font-extrabold" index={3} />
+              <InputOTPSlot className="shad-otp-slot text-green-900 font-extrabold" index={4} />
+              <InputOTPSlot className="shad-otp-slot text-green-900 font-extrabold" index={5} />
             </InputOTPGroup>
           </InputOTP>
 

@@ -167,9 +167,9 @@ export const AppointmentForm = ({
                       decoding="async"
                     />
                     <div className="flex flex-col text-left">
-                      <p className="font-medium text-white">Dr. {doctor.name}</p>
+                      <p className="font-bold text-slate-900">Dr. {doctor.name}</p>
                       {doctor.specialty && (
-                        <p className="text-xs text-dark-600">{doctor.specialty}</p>
+                        <p className="text-xs text-slate-500">{doctor.specialty}</p>
                       )}
                     </div>
                   </div>

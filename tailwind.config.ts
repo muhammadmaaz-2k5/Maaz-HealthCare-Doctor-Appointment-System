@@ -22,8 +22,17 @@ const config = {
     extend: {
       colors: {
         green: {
-          500: "#24AE7C",
-          600: "#0D2A1F",
+          50: "#F0FDF4",
+          100: "#DCFCE7",
+          200: "#BBF7D0",
+          300: "#86EFAC",
+          400: "#4ADE80",
+          500: "#22C55E", // Primary vibrant emerald green
+          600: "#16A34A", // Deep interactive hover green
+          700: "#15803D", // Strong text accents
+          800: "#166534", // Dark forest titles
+          900: "#14532D", // Ultra rich green
+          950: "#052E16",
         },
         blue: {
           500: "#79B5EC",
@@ -31,19 +40,23 @@ const config = {
         },
         red: {
           500: "#F37877",
-          600: "#3E1716",
-          700: "#F24E43",
+          600: "#DC2626",
+          700: "#B91C1C",
         },
         light: {
-          200: "#E8E9E9",
+          100: "#FFFFFF",
+          200: "#F8FAFC",
+          300: "#F1F5F9",
+          400: "#E2E8F0",
         },
         dark: {
-          200: "#0D0F10",
-          300: "#131619",
-          400: "#1A1D21",
-          500: "#363A3D",
-          600: "#76828D",
-          700: "#ABB8C4",
+          200: "#1E293B",
+          300: "#334155",
+          400: "#475569",
+          500: "#64746B",
+          600: "#4B5563",
+          700: "#1E293B", // Mapped to elegant readable slate for compatibility
+          800: "#0F172A",
         },
       },
       fontFamily: {
