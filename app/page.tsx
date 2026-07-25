@@ -109,11 +109,11 @@ const Home = ({ searchParams }: SearchParamProps) => {
               </Button>
             </div>
 
-            <div className={Theme.footer.wrapper}>
-              <p className={Theme.footer.copyright}>
+            <div className="mt-12 flex w-full flex-col items-center gap-3">
+              <p className="text-14-regular text-slate-500">
                 © 2024 MaazPulse
               </p>
-              <AdminLink className={Theme.footer.adminLink} />
+              <AdminLink className="text-14-semibold text-green-700 hover:text-green-800 hover:underline transition-all duration-200" />
             </div>
           </div>
         </div>

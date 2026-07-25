@@ -34,8 +34,8 @@ const Register = async ({ params: { userId } }: SearchParamProps) => {
   return (
     <div className={Theme.layout.screen}>
       <section className={Theme.layout.container}>
-        <div className={Theme.layout.subContainerRegister}>
-          <Link href="/">
+        <div className="flex flex-1 flex-col items-center justify-center">
+          <Link href="/" className="mb-10">
             <img
               src="/assets/icons/logo-full.svg"
               width={200}
@@ -48,10 +48,15 @@ const Register = async ({ params: { userId } }: SearchParamProps) => {
             />
           </Link>
 
-          {/* Pass mergedUser for prefill/edit */}
-          <RegisterForm user={mergedUser} patient={patient} />
+          <div className="w-full max-w-[640px] rounded-2xl border border-green-100 bg-white p-8 shadow-lg shadow-green-950/5 sm:p-10">
+            <RegisterForm user={mergedUser} patient={patient} />
+          </div>
 
-          <p className={Theme.footer.copyrightSimple}>© 2024 MaazPulse</p>
+          <div className="mt-12 flex w-full flex-col items-center gap-3">
+            <p className="text-14-regular text-slate-500">
+              © 2024 MaazPulse
+            </p>
+          </div>
         </div>
       </section>
 
