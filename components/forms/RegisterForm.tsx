@@ -152,7 +152,7 @@ const RegisterForm = ({ user, patient }: RegisterFormProps) => {
         className="w-full space-y-10"
       >
         <section className="space-y-3">
-          <h1 className="text-32-bold text-green-900 tracking-tight">Welcome 👋</h1>
+          <h1 className="text-32-bold !text-green-900 tracking-tight">Welcome 👋</h1>
           <p className="text-16-regular text-slate-600">
             Let us know more about yourself.
           </p>
@@ -165,7 +165,7 @@ const RegisterForm = ({ user, patient }: RegisterFormProps) => {
 
         <section className="space-y-6">
           <div className="space-y-1">
-            <h2 className="text-18-bold text-green-800">Personal Information</h2>
+            <h2 className="text-18-bold !text-green-800">Personal Information</h2>
             <div className="h-px w-full bg-green-100" />
           </div>
 
@@ -281,7 +281,7 @@ const RegisterForm = ({ user, patient }: RegisterFormProps) => {
 
         <section className="space-y-6">
           <div className="space-y-1">
-            <h2 className="text-18-bold text-green-800">Medical Information</h2>
+            <h2 className="text-18-bold !text-green-800">Medical Information</h2>
             <div className="h-px w-full bg-green-100" />
           </div>
 
@@ -374,7 +374,7 @@ const RegisterForm = ({ user, patient }: RegisterFormProps) => {
 
         <section className="space-y-6">
           <div className="space-y-1">
-            <h2 className="text-18-bold text-green-800">
+            <h2 className="text-18-bold !text-green-800">
               Identification and Verification
             </h2>
             <div className="h-px w-full bg-green-100" />
@@ -450,7 +450,7 @@ const RegisterForm = ({ user, patient }: RegisterFormProps) => {
 
         <section className="space-y-6">
           <div className="space-y-1">
-            <h2 className="text-18-bold text-green-800">Consent and Privacy</h2>
+            <h2 className="text-18-bold !text-green-800">Consent and Privacy</h2>
             <div className="h-px w-full bg-green-100" />
           </div>
 

@@ -77,7 +77,7 @@ export const PatientForm = () => {
         className="w-full space-y-8"
       >
         <section className="space-y-3">
-          <h1 className="text-32-bold text-green-900 tracking-tight">Hi there 👋</h1>
+          <h1 className="text-32-bold !text-green-900 tracking-tight">Hi there 👋</h1>
           <p className="text-16-regular text-slate-600">
             Get started with medical consultations.
           </p>
