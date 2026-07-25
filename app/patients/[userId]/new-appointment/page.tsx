@@ -10,6 +10,22 @@ import { getPatient } from "@/lib/actions/patient.actions";
 const Appointment = async ({ params: { userId } }: SearchParamProps) => {
   const patient = await getPatient(userId);
 
+  if (!patient) {
+    return (
+      <div className={Theme.layout.centeredError}>
+        <div className={Theme.card.errorBox}>
+          <p className="mb-2 font-bold text-green-900">Patient Record Required</p>
+          <p className="mb-4 text-slate-600">
+            We could not retrieve an active patient registration profile for this account. Please complete your registration first.
+          </p>
+          <Link href={`/patients/${userId}/register`} className={Theme.button.primary}>
+            Complete Patient Registration
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={Theme.layout.screen}>
       <section className={Theme.layout.container}>

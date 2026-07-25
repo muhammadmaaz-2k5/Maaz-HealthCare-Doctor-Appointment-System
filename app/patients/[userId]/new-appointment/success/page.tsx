@@ -18,8 +18,24 @@ const RequestSuccess = async ({
   const appointmentId = (searchParams?.appointmentId as string) || "";
   const appointment = await getAppointment(appointmentId);
 
+  if (!appointment) {
+    return (
+      <div className={Theme.layout.centeredError}>
+        <div className={Theme.card.errorBox}>
+          <p className="mb-2 font-semibold text-red-600">Appointment Details Not Found</p>
+          <p className="mb-4 text-slate-600">
+            We could not retrieve the details for this appointment request. It may have already been scheduled, or the link has expired.
+          </p>
+          <Link href="/" className={Theme.button.primary}>
+            Return to Home
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
   const doctor = Doctors.find(
-    (doctor) => doctor.name === appointment.primaryPhysician
+    (doc) => doc.name === appointment.primaryPhysician
   );
 
   return (
@@ -63,38 +79,40 @@ const RequestSuccess = async ({
             been successfully submitted!
           </h2>
           <p className={Theme.header.pageSubtitle}>
-            We&apos;ll be in touch shortly to confirm with Dr. {doctor?.name}.
+            We&apos;ll be in touch shortly to confirm with Dr. {doctor?.name || appointment.primaryPhysician}.
           </p>
         </section>
 
-        <section className="request-details text-dark-700">
-          <p>Requested appointment details: </p>
+        <section className="request-details text-slate-800 border border-green-100 shadow-md">
+          <p className="font-semibold">Requested appointment details: </p>
           <div className="flex items-center gap-3">
-            <img
-              src={doctor?.image!}
-              alt="doctor"
-              width={100}
-              height={100}
-              className={Theme.image.avatarSmall}
-              style={{
-                width: "auto",
-                height: "auto",
-                maxWidth: 100,
-                maxHeight: 100,
-                objectFit: "contain",
-                aspectRatio: "auto",
-              }}
-              loading="lazy"
-              decoding="async"
-            />
+            {doctor?.image && (
+              <img
+                src={doctor.image}
+                alt="doctor"
+                width={100}
+                height={100}
+                className={Theme.image.avatarSmall}
+                style={{
+                  width: "auto",
+                  height: "auto",
+                  maxWidth: 100,
+                  maxHeight: 100,
+                  objectFit: "contain",
+                  aspectRatio: "auto",
+                }}
+                loading="lazy"
+                decoding="async"
+              />
+            )}
             <div>
-              <p className={Theme.text.doctorName}>Dr. {doctor?.name}</p>
+              <p className={Theme.text.doctorName}>Dr. {doctor?.name || appointment.primaryPhysician}</p>
               {doctor?.specialty && (
-                <p className="text-12-regular text-dark-600">{doctor.specialty}</p>
+                <p className="text-12-regular text-slate-500">{doctor.specialty}</p>
               )}
             </div>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 items-center">
             <img
               src="/assets/icons/calendar.svg"
               height={24}
@@ -111,7 +129,7 @@ const RequestSuccess = async ({
               loading="lazy"
               decoding="async"
             />
-            <p> {formatDateTime(appointment.schedule).dateTime}</p>
+            <p className="font-medium"> {appointment.schedule ? formatDateTime(appointment.schedule).dateTime : "Date pending"}</p>
           </div>
         </section>
 
