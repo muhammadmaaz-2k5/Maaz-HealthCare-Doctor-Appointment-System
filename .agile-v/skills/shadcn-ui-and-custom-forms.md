@@ -1,7 +1,7 @@
 # Skill: Shadcn UI & Custom Form Field Engineering
 
 ## 📌 Protocol Overview
-CarePulse achieves its signature high-performance, dark-mode healthcare design by leveraging Radix UI component primitives, Shadcn UI styling conventions, and an advanced consolidated form input wrapper: `CustomFormField.tsx`. This manual outlines acceptable styling methodologies and form construction rules.
+MaazPulse achieves its signature high-performance, dark-mode healthcare design by leveraging Radix UI component primitives, Shadcn UI styling conventions, and an advanced consolidated form input wrapper: `CustomFormField.tsx`. This manual outlines acceptable styling methodologies and form construction rules.
 
 ---
 

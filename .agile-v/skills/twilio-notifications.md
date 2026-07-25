@@ -1,7 +1,7 @@
 # Skill: Twilio SMS Messaging & Automated Notifications
 
 ## 📌 Protocol Overview
-CarePulse implements proactive patient diagnostic communication through automated event-driven SMS webhooks powered by the Twilio Cloud SDK. This manual standardizes our messaging template syntax, carrier routing rules, and fault-tolerant server action integrations.
+MaazPulse implements proactive patient diagnostic communication through automated event-driven SMS webhooks powered by the Twilio Cloud SDK. This manual standardizes our messaging template syntax, carrier routing rules, and fault-tolerant server action integrations.
 
 ---
 
@@ -40,13 +40,13 @@ export const sendSMSNotification = async (userId: string, content: string) => {
 
 ## 📝 Medical SMS Copywriting & Template Standards
 
-All communications dispatched through CarePulse must remain concise, professional, and free of sensitive clinical diagnoses (PHI protection). Stick to standardized verification templates:
+All communications dispatched through MaazPulse must remain concise, professional, and free of sensitive clinical diagnoses (PHI protection). Stick to standardized verification templates:
 
 ### 1. Appointment Confirmation Template (Scheduled State)
-> `"Hi, [Patient First Name]. Your clinic appointment with Dr. [Doctor Name] at CarePulse is successfully confirmed for [Formatted Date] at [Formatted Time]. Reply STOP to unsubscribe."`
+> `"Hi, [Patient First Name]. Your clinic appointment with Dr. [Doctor Name] at MaazPulse is successfully confirmed for [Formatted Date] at [Formatted Time]. Reply STOP to unsubscribe."`
 
 ### 2. Appointment Rescheduling Template (Modified State)
-> `"Hi, [Patient First Name]. Notice: Your appointment with Dr. [Doctor Name] at CarePulse has been rescheduled to [New Date/Time]. Please log into your portal if you have questions."`
+> `"Hi, [Patient First Name]. Notice: Your appointment with Dr. [Doctor Name] at MaazPulse has been rescheduled to [New Date/Time]. Please log into your portal if you have questions."`
 
 ### 3. Appointment Cancellation Template (Cancelled State)
 > `"Hi, [Patient First Name]. We regret to inform you that your appointment with Dr. [Doctor Name] scheduled for [Date/Time] has been cancelled. Reason: [Admin Reason]. Contact our facility to reschedule."`

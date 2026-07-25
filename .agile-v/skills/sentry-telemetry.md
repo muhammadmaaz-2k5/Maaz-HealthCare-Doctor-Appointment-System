@@ -1,7 +1,7 @@
 # Skill: Sentry Telemetry & Performance Observability
 
 ## 📌 Protocol Overview
-CarePulse integrates multi-layered Sentry instrumentation across client React trees, edge runtime routes, and backend Node Server Actions. This guide specifies how to configure telemetry exceptions, sanitize medical data from logs, and analyze diagnostic traces.
+MaazPulse integrates multi-layered Sentry instrumentation across client React trees, edge runtime routes, and backend Node Server Actions. This guide specifies how to configure telemetry exceptions, sanitize medical data from logs, and analyze diagnostic traces.
 
 ---
 

@@ -1,6 +1,6 @@
-# CarePulse — System Epics & Functional Phases
+# MaazPulse — System Epics & Functional Phases
 
-The **`phases/`** directory structures CarePulse's macro architectural domains into discrete, manageable engineering Epics. Each phase encapsulates a cohesive functional layer of the healthcare software system, documenting system invariants, data structures, and subsystem boundaries.
+The **`phases/`** directory structures MaazPulse's macro architectural domains into discrete, manageable engineering Epics. Each phase encapsulates a cohesive functional layer of the healthcare software system, documenting system invariants, data structures, and subsystem boundaries.
 
 ---
 

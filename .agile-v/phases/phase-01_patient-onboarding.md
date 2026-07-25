@@ -1,7 +1,7 @@
 # Phase-01: Patient Identity & Onboarding
 
 ## 📖 Domain Summary
-This epic manages the complete lifecycle of a new patient interacting with CarePulse for the first time. It ensures seamless identity verification, secure creation of cloud user profiles, intake of sensitive medical history, and compliant document uploading.
+This epic manages the complete lifecycle of a new patient interacting with MaazPulse for the first time. It ensures seamless identity verification, secure creation of cloud user profiles, intake of sensitive medical history, and compliant document uploading.
 
 ---
 

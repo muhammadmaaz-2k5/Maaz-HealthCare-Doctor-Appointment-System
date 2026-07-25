@@ -1,7 +1,7 @@
 # Skill: Appwrite Database & Bucket Integration
 
 ## 📌 Protocol Overview
-CarePulse uses Appwrite as its unified backend system for authentication, NoSQL document databases, and encrypted file storage buckets. This guide establishes the standardized patterns for interacting with Appwrite collections and uploading sensitive patient identification documents.
+MaazPulse uses Appwrite as its unified backend system for authentication, NoSQL document databases, and encrypted file storage buckets. This guide establishes the standardized patterns for interacting with Appwrite collections and uploading sensitive patient identification documents.
 
 ---
 

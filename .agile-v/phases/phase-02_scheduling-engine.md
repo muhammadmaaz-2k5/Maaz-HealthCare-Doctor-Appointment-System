@@ -1,7 +1,7 @@
 # Phase-02: Scheduling Engine & SMS Webhooks
 
 ## 📖 Domain Summary
-Phase 2 powers the dynamic appointment scheduling engine and automated notification architecture of CarePulse. It facilitates seamless communication between patients and clinical practitioners while minimizing schedule conflicts and missed consultations.
+Phase 2 powers the dynamic appointment scheduling engine and automated notification architecture of MaazPulse. It facilitates seamless communication between patients and clinical practitioners while minimizing schedule conflicts and missed consultations.
 
 ---
 
@@ -19,7 +19,7 @@ Located in [lib/actions/appointment.actions.ts](../../lib/actions/appointment.ac
 ### 3. Twilio SMS Automated Notifications
 * **Trigger Mechanism**: Whenever an appointment is scheduled, administratively confirmed, or cancelled, `sendSMSNotification` is invoked.
 * **Message Formatting**: Synthesizes clean, professional medical SMS templates:
-  > *"Hi, [Patient Name]. Your [Appointment Type] consultation with Dr. [Doctor Name] at CarePulse is confirmed for [Date/Time]."*
+  > *"Hi, [Patient Name]. Your [Appointment Type] consultation with Dr. [Doctor Name] at MaazPulse is confirmed for [Date/Time]."*
 * **Error Containment**: Encapsulated within asynchronous try/catch blocks ensuring that if an SMS carrier delivery fails or hits rate throttles, database state integrity remains unaffected while alerting telemetry instrumentation.
 
 ---

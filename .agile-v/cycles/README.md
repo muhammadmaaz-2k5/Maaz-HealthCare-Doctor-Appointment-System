@@ -1,6 +1,6 @@
-# CarePulse — Agile Product Cycles
+# MaazPulse — Agile Product Cycles
 
-The **`cycles/`** module defines our macro-level engineering milestones, product releases, and long-term evolutionary roadmap for the CarePulse platform. Each cycle encompasses multiple strategic epics and sprints aimed at bringing significant new capabilities into production.
+The **`cycles/`** module defines our macro-level engineering milestones, product releases, and long-term evolutionary roadmap for the MaazPulse platform. Each cycle encompasses multiple strategic epics and sprints aimed at bringing significant new capabilities into production.
 
 ---
 

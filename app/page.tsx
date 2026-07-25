@@ -77,7 +77,7 @@ const Home = ({ searchParams }: SearchParamProps) => {
               src="/assets/icons/logo-full.svg"
               width={200}
               height={40}
-              alt="CarePulse Logo"
+              alt="MaazPulse Logo"
               className="mb-12 h-10 w-fit"
               loading="eager"
               decoding="async"
@@ -107,7 +107,7 @@ const Home = ({ searchParams }: SearchParamProps) => {
 
           <div className="text-14-regular mt-20 flex justify-between">
             <p className="justify-items-end text-dark-600 xl:text-left">
-              © 2024 CarePulse
+              © 2024 MaazPulse
             </p>
             <AdminLink className="text-green-500" />
           </div>

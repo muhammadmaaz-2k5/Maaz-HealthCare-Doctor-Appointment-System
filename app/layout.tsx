@@ -13,9 +13,9 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "CarePulse | HealthCare Patient Management System",
+  title: "MaazPulse | HealthCare Patient Management System",
   description:
-    "CarePulse is a full-stack healthcare patient management system for clinics and hospitals. Streamline patient registration, appointment scheduling, medical records, notifications, and file uploads with a modern, secure, and responsive Next.js app.",
+    "MaazPulse is a full-stack healthcare patient management system for clinics and hospitals. Streamline patient registration, appointment scheduling, medical records, notifications, and file uploads with a modern, secure, and responsive Next.js app.",
   authors: [
     {
       name: "Arnob Mahmud",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     apple: "/assets/icons/logo-icon.svg",
   },
   openGraph: {
-    title: "CarePulse | HealthCare Patient Management System",
+    title: "MaazPulse | HealthCare Patient Management System",
     description:
       "Modern healthcare app for clinics and hospitals. Register patients, schedule appointments, manage records, and more.",
     url: "https://healthcare-arnob.vercel.app/",
@@ -60,13 +60,13 @@ export const metadata: Metadata = {
         url: "/assets/icons/logo-icon.svg",
         width: 120,
         height: 120,
-        alt: "CarePulse Logo",
+        alt: "MaazPulse Logo",
       },
     ],
   },
   twitter: {
     card: "summary",
-    title: "CarePulse | HealthCare Patient Management System",
+    title: "MaazPulse | HealthCare Patient Management System",
     description:
       "Modern healthcare app for clinics and hospitals. Register patients, schedule appointments, manage records, and more.",
     images: ["/assets/icons/logo-icon.svg"],

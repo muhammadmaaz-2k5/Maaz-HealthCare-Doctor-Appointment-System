@@ -1,6 +1,6 @@
-# CarePulse — AGENTS & AI Engineering Playbook (AGENTS.md)
+# MaazPulse — AGENTS & AI Engineering Playbook (AGENTS.md)
 
-This document serves as the mandatory operational guideline, architectural boundary specification, and engineering playbook for all developers, AI assistants, and automated agents contributing to the **CarePulse** healthcare repository.
+This document serves as the mandatory operational guideline, architectural boundary specification, and engineering playbook for all developers, AI assistants, and automated agents contributing to the **MaazPulse** healthcare repository.
 
 ---
 
@@ -29,7 +29,7 @@ Healthcare software requires strict security and privacy standards. When modifyi
 
 ## 3. 🎨 Design Aesthetics & UI Rules
 
-1. **Vibrant & Clean Medical Aesthetics**: CarePulse utilizes a curated, dark-mode accessible healthcare aesthetic. Avoid raw browser defaults or plain RGB color names. Rely exclusively on design system tokens defined in `tailwind.config.ts` and `globals.css` (e.g., `bg-dark-300`, `text-green-500`, `border-dark-400`).
+1. **Vibrant & Clean Medical Aesthetics**: MaazPulse utilizes a curated, dark-mode accessible healthcare aesthetic. Avoid raw browser defaults or plain RGB color names. Rely exclusively on design system tokens defined in `tailwind.config.ts` and `globals.css` (e.g., `bg-dark-300`, `text-green-500`, `border-dark-400`).
 2. **Component Reuse**: Do not re-create UI primitives (buttons, modals, dialogs, badges). Use existing implementations in `components/ui/`, `StatusBadge.tsx`, `SubmitButton.tsx`, and table action components (`AppointmentModal.tsx`, `PatientModal.tsx`).
 3. **Responsive Design**: All screens must flawlessly scale from mobile phone viewports up to expansive widescreen medical workstation monitors.
 

@@ -1,4 +1,4 @@
-# CarePulse — Agile Sprints & Actionable Tasks
+# MaazPulse — Agile Sprints & Actionable Tasks
 
 The **`sprints/`** directory represents our active execution engine and tactical task backlog. While **Cycles** track quarterly release goals and **Phases** structure domain architecture, sprints segment active engineering work into focused, two-week iterative deliverables.
 

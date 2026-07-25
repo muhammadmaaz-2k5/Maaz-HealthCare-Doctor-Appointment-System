@@ -1,7 +1,7 @@
 # Skill: Next.js Server Actions & Zod Validation
 
 ## 📌 Protocol Overview
-In CarePulse, all backend operations—from patient registrations to clinic scheduling mutations—occur safely inside Next.js Server Actions (`lib/actions/`). This manual defines our standard operating procedure for ensuring runtime type safety with Zod and clean asynchronous execution.
+In MaazPulse, all backend operations—from patient registrations to clinic scheduling mutations—occur safely inside Next.js Server Actions (`lib/actions/`). This manual defines our standard operating procedure for ensuring runtime type safety with Zod and clean asynchronous execution.
 
 ---
 

@@ -1,4 +1,4 @@
-# CarePulse — Next.js FullStack Healthcare & Doctor Appointment System
+# MaazPulse — Next.js FullStack Healthcare & Doctor Appointment System
 
 <div align="center">
   <h3>Modern Healthcare Operations, Electronic Patient Records & Medical Consultation Scheduling</h3>
@@ -8,7 +8,7 @@
 
 ## 🏥 Executive Overview
 
-**CarePulse** is a state-of-the-art, high-performance healthcare platform engineered to streamline patient onboarding, digital identification verification, medical clinic appointment scheduling, and automated SMS diagnostic communications. Built with **Next.js 14**, **Appwrite**, **Twilio**, and **Sentry**, CarePulse ensures HIPAA-compliant workflows while delivering an elite user interface designed with **Tailwind CSS** and **Shadcn UI**.
+**MaazPulse** is a state-of-the-art, high-performance healthcare platform engineered to streamline patient onboarding, digital identification verification, medical clinic appointment scheduling, and automated SMS diagnostic communications. Built with **Next.js 14**, **Appwrite**, **Twilio**, and **Sentry**, MaazPulse ensures HIPAA-compliant workflows while delivering an elite user interface designed with **Tailwind CSS** and **Shadcn UI**.
 
 ---
 
@@ -93,7 +93,7 @@ Access the application locally at `http://localhost:3000`.
 
 ## 📈 Agile Execution & AI Governance
 
-CarePulse follows disciplined engineering governance managed in the root directory:
+MaazPulse follows disciplined engineering governance managed in the root directory:
 * **Developer & AI Playbook**: Refer to [AGENTS.md](file:///c:/Users/asdfq/Desktop/HealthCare%20Management%20System/HealthCare-Doctor-Appointment-Management-System--NextJS-FullStack/AGENTS.md) for contribution rules, security guidelines, and architectural boundaries.
 * **Project Lifecycle Management**: Check the `.agile-v/` framework for active sprint tasks, domain epics, release roadmaps, and modular operational skills.
 # Maaz-HealthCare-Doctor-Appointment-System

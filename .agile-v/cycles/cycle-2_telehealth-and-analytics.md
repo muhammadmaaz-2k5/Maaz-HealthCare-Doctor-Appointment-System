@@ -1,7 +1,7 @@
 # Cycle-02: Telehealth Integration & Clinical Intelligence (Planned)
 
 ## 📌 Milestone Overview
-**Cycle 2** expands CarePulse from an electronic scheduling system into a comprehensive virtual healthcare delivery platform. This cycle introduces interactive real-time video consulting rooms, automated insurance eligibility verification, and deep clinical bioinformatics diagnostics integration.
+**Cycle 2** expands MaazPulse from an electronic scheduling system into a comprehensive virtual healthcare delivery platform. This cycle introduces interactive real-time video consulting rooms, automated insurance eligibility verification, and deep clinical bioinformatics diagnostics integration.
 
 ---
 

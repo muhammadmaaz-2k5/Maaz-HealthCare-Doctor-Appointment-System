@@ -1,7 +1,7 @@
 # Cycle-01: Foundation & MVP Stabilization (Current)
 
 ## 📌 Milestone Overview
-**Cycle 1** focuses on stabilizing and optimizing the primary full-stack medical reservation workflows of CarePulse. This encompasses end-to-end patient onboarding, medical identification file storage, interactive doctor scheduling, administrative clinic command center tools, and automated communication webhooks.
+**Cycle 1** focuses on stabilizing and optimizing the primary full-stack medical reservation workflows of MaazPulse. This encompasses end-to-end patient onboarding, medical identification file storage, interactive doctor scheduling, administrative clinic command center tools, and automated communication webhooks.
 
 ---
 

@@ -1,4 +1,4 @@
-# CarePulse — Operational AI & Developer Skills
+# MaazPulse — Operational AI & Developer Skills
 
 The **`skills/`** repository contains codebase-specific engineering manuals, standardized pattern architectures, and step-by-step technical execution guidelines. Whether you are a newly onboarded engineer or an AI Coding Assistant, these skill guidelines must be adhered to when implementing new features or extending existing subsystems.
 
@@ -17,7 +17,7 @@ The **`skills/`** repository contains codebase-specific engineering manuals, sta
 ---
 
 ## 🎯 Skill Usage Rules for AI Assistants
-When asked to perform a coding task in CarePulse:
+When asked to perform a coding task in MaazPulse:
 1. **Match Topic**: Check the table above for relevant technical competencies.
 2. **Review Patterns**: Open and review the corresponding skill document to understand naming conventions, import paths, and error containment strategies.
 3. **Strict Execution**: Do not improvise third-party libraries or alternate styling architectures when an approved solution exists in these skill manuals.

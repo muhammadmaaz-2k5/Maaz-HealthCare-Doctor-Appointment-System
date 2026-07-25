@@ -18,7 +18,7 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
               src="/assets/icons/logo-full.svg"
               width={200}
               height={40}
-              alt="CarePulse Logo"
+              alt="MaazPulse Logo"
               className="mb-12 h-10 w-fit"
               loading="eager"
               decoding="async"
@@ -32,7 +32,7 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
             type="create"
           />
 
-          <p className="copyright mt-10 py-12">© 2024 CarePulse</p>
+          <p className="copyright mt-10 py-12">© 2024 MaazPulse</p>
         </div>
       </section>
 

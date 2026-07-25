@@ -1,7 +1,7 @@
 # Sprint-01: MVP Hardening & System Stabilization (Active)
 
 ## 🎯 Sprint Objectives
-Sprint 1 is dedicated to refining the foundational stability of CarePulse by tightening Zod runtime validation parameters, adding resilient error fallbacks to Twilio messaging webhooks, and optimizing global loading states across medical registration screens.
+Sprint 1 is dedicated to refining the foundational stability of MaazPulse by tightening Zod runtime validation parameters, adding resilient error fallbacks to Twilio messaging webhooks, and optimizing global loading states across medical registration screens.
 
 ---
 

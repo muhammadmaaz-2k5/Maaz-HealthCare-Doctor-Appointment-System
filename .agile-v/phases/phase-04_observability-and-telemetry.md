@@ -1,14 +1,14 @@
 # Phase-04: Observability, Telemetry & Compliance Tracing
 
 ## 📖 Domain Summary
-Phase 4 defines the comprehensive observability infrastructure, runtime crash monitoring, and reliability diagnostics embedded throughout CarePulse. In healthcare engineering, rapid detection of backend database failures, webhook downtime, or rendering exceptions is paramount for patient safety and HIPAA system stability audits.
+Phase 4 defines the comprehensive observability infrastructure, runtime crash monitoring, and reliability diagnostics embedded throughout MaazPulse. In healthcare engineering, rapid detection of backend database failures, webhook downtime, or rendering exceptions is paramount for patient safety and HIPAA system stability audits.
 
 ---
 
 ## 🧱 Architectural Breakdown & Components
 
 ### 1. Multi-Context Sentry Instrumentation
-CarePulse leverages `@sentry/nextjs` integrated natively across all execution topologies:
+MaazPulse leverages `@sentry/nextjs` integrated natively across all execution topologies:
 * **Client Telemetry**: Governed by `sentry.client.config.ts`, capturing browser unhandled rejections, DOM hydration mismatches, and interactive UI performance bottlenecks. Includes automated replay recording of crash sequences without recording sensitive form input keystrokes (PHI preservation).
 * **Server & Edge Telemetry**: Configured in `sentry.server.config.ts` and `sentry.edge.config.ts`, monitoring Server Action runtime durations, Appwrite database query latency, and Twilio API communication failures.
 * **Webpack & Build Bundling**: Managed via `withSentryConfig` wrapper in `next.config.mjs` to automatically generate and upload sourcemaps during production compilation.
