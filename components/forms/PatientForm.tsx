@@ -72,38 +72,49 @@ export const PatientForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className={Theme.form.wrapper}>
-        <section className={Theme.header.sectionHeader}>
-          <h1 className={Theme.header.pageHeader}>Hi there 👋</h1>
-          <p className={Theme.header.pageSubtitle}>Get started with medical consultations.</p>
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="w-full space-y-8"
+      >
+        <section className="space-y-3">
+          <h1 className="text-32-bold text-green-900 tracking-tight">Hi there 👋</h1>
+          <p className="text-16-regular text-slate-600">
+            Get started with medical consultations.
+          </p>
         </section>
-        <CustomFormField
-          fieldType={FormFieldType.INPUT}
-          control={form.control}
-          name="name"
-          label="Full name"
-          placeholder="John Doe"
-          iconSrc="/assets/icons/user.svg"
-          iconAlt="user"
-          iconClassName={Theme.form.iconWrapper}
-        />
-        <CustomFormField
-          fieldType={FormFieldType.INPUT}
-          control={form.control}
-          name="email"
-          label="Email"
-          placeholder="johndoe@gmail.com"
-          iconSrc="/assets/icons/email.svg"
-          iconAlt="email"
-          iconClassName={Theme.form.iconWrapper}
-        />
-        <CustomFormField
-          fieldType={FormFieldType.PHONE_INPUT}
-          control={form.control}
-          name="phone"
-          label="Phone number"
-          placeholder="(555) 123-4567"
-        />
+
+        <div className="space-y-6">
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="name"
+            label="Full name"
+            placeholder="John Doe"
+            iconSrc="/assets/icons/user.svg"
+            iconAlt="user"
+            iconClassName={Theme.form.iconWrapper}
+          />
+
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="email"
+            label="Email"
+            placeholder="johndoe@gmail.com"
+            iconSrc="/assets/icons/email.svg"
+            iconAlt="email"
+            iconClassName={Theme.form.iconWrapper}
+          />
+
+          <CustomFormField
+            fieldType={FormFieldType.PHONE_INPUT}
+            control={form.control}
+            name="phone"
+            label="Phone number"
+            placeholder="(555) 123-4567"
+          />
+        </div>
+
         <SubmitButton
           isLoading={isLoading || isPending}
           loadingText="Continuing..."

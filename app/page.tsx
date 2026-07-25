@@ -73,44 +73,48 @@ const Home = ({ searchParams }: SearchParamProps) => {
 
       <section className={Theme.layout.container}>
         <div className={Theme.layout.subContainer}>
-          <Link href="/">
-            <img
-              src="/assets/icons/logo-full.svg"
-              width={200}
-              height={40}
-              alt="MaazPulse Logo"
-              className={Theme.header.logo}
-              loading="eager"
-              decoding="async"
-              style={{ height: "auto", width: "auto" }}
-            />
-          </Link>
+          <div className="flex flex-1 flex-col items-center justify-center">
+            <Link href="/" className="mb-10">
+              <img
+                src="/assets/icons/logo-full.svg"
+                width={200}
+                height={40}
+                alt="MaazPulse Logo"
+                className={Theme.header.logo}
+                loading="eager"
+                decoding="async"
+                style={{ height: "auto", width: "auto" }}
+              />
+            </Link>
 
-          <PatientForm />
+            <div className="w-full max-w-[480px] rounded-2xl border border-green-100 bg-white p-8 shadow-lg shadow-green-950/5 sm:p-10">
+              <PatientForm />
+            </div>
 
-          <div className={Theme.form.returningPromptWrapper}>
-            <span className={Theme.text.muted}>
-              Already registered? or already made an appointment before? Then
-              click this below button, Thank you.
-            </span>
-            <Button
-              variant="outline"
-              className={`${Theme.button.primary}${isPending ? " " + Theme.button.primaryDisabled : ""}`}
-              onClick={() => {
-                startTransition(() => setOpen(true));
-              }}
-              type="button"
-              disabled={isPending}
-            >
-              {isPending ? "Continuing..." : "Returning Patient?"}
-            </Button>
-          </div>
+            <div className={Theme.form.returningPromptWrapper}>
+              <span className={Theme.text.muted}>
+                Already registered? or already made an appointment before? Then
+                click this below button, Thank you.
+              </span>
+              <Button
+                variant="outline"
+                className={`${Theme.button.ghost}`}
+                onClick={() => {
+                  startTransition(() => setOpen(true));
+                }}
+                type="button"
+                disabled={isPending}
+              >
+                {isPending ? "Continuing..." : "Returning Patient?"}
+              </Button>
+            </div>
 
-          <div className={Theme.footer.wrapper}>
-            <p className={Theme.footer.copyright}>
-              © 2024 MaazPulse
-            </p>
-            <AdminLink className={Theme.footer.adminLink} />
+            <div className={Theme.footer.wrapper}>
+              <p className={Theme.footer.copyright}>
+                © 2024 MaazPulse
+              </p>
+              <AdminLink className={Theme.footer.adminLink} />
+            </div>
           </div>
         </div>
       </section>
