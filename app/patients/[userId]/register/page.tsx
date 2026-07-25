@@ -34,7 +34,7 @@ const Register = async ({ params: { userId } }: SearchParamProps) => {
   return (
     <div className={Theme.layout.screen}>
       <section className={Theme.layout.container}>
-        <div className="flex flex-1 flex-col items-center justify-center">
+        <div className="flex flex-1 flex-col items-center justify-start">
           <Link href="/" className="mb-10">
             <img
               src="/assets/icons/logo-full.svg"
