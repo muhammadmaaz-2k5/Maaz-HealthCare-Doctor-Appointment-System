@@ -63,20 +63,22 @@ export const getUser = async (userId: string) => {
   }
 };
 
-// REGISTER PATIENT
+// REGISTER OR UPDATE PATIENT
 export const registerPatient = async ({
   identificationDocument,
   ...patient
-}: RegisterUserParams) => {
+}: RegisterUserParams & { $id?: string }) => {
   try {
-    // Upload file ->  // https://appwrite.io/docs/references/cloud/client-web/storage#createFile
+    // Upload file -> https://appwrite.io/docs/references/cloud/client-web/storage#createFile
     let file;
     let publicUrl = null;
     if (identificationDocument) {
-      const blobEntry = identificationDocument.get("blobFile");
+      const blobEntry = identificationDocument.get("blobFile") as Blob | File;
       const fileName = identificationDocument.get("fileName") as string;
-      if (blobEntry && blobEntry instanceof Blob) {
-        const inputFile = InputFile.fromBuffer(blobEntry, fileName);
+      if (blobEntry) {
+        const arrayBuffer = await blobEntry.arrayBuffer();
+        const buffer = Buffer.from(arrayBuffer);
+        const inputFile = InputFile.fromBuffer(buffer, fileName || blobEntry.name || "identification_document.png");
         file = await storage.createFile(BUCKET_ID!, ID.unique(), inputFile);
         if (file?.$id) {
           publicUrl = `${ENDPOINT}/storage/buckets/${BUCKET_ID}/files/${file.$id}/view?project=${NEXT_PUBLIC_PROJECT_ID}`;
@@ -84,21 +86,38 @@ export const registerPatient = async ({
       }
     }
 
-    // Create new patient document -> https://appwrite.io/docs/references/cloud/server-nodejs/databases#createDocument
-    const newPatient = await databases.createDocument(
-      NEXT_PUBLIC_DATABASE_ID!,
-      NEXT_PUBLIC_PATIENT_COLLECTION_ID!,
-      ID.unique(),
-      {
-        identificationDocumentId: file?.$id ? file.$id : null,
-        identificationDocumentUrl: publicUrl,
-        ...patient,
-      }
-    );
+    const { $id, ...patientData } = patient as any;
+
+    // If patient document already exists, update it; otherwise create a new record
+    let newPatient;
+    if ($id) {
+      newPatient = await databases.updateDocument(
+        NEXT_PUBLIC_DATABASE_ID!,
+        NEXT_PUBLIC_PATIENT_COLLECTION_ID!,
+        $id,
+        {
+          ...(file?.$id && { identificationDocumentId: file.$id }),
+          ...(publicUrl && { identificationDocumentUrl: publicUrl }),
+          ...patientData,
+        }
+      );
+    } else {
+      newPatient = await databases.createDocument(
+        NEXT_PUBLIC_DATABASE_ID!,
+        NEXT_PUBLIC_PATIENT_COLLECTION_ID!,
+        ID.unique(),
+        {
+          identificationDocumentId: file?.$id ? file.$id : null,
+          identificationDocumentUrl: publicUrl,
+          ...patientData,
+        }
+      );
+    }
 
     return parseStringify(newPatient);
-  } catch (error) {
-    console.error("An error occurred while creating a new patient:", error);
+  } catch (error: any) {
+    console.error("An error occurred while creating/updating a patient:", error);
+    throw new Error(error?.message || "Failed to submit patient registration details.");
   }
 };
 
