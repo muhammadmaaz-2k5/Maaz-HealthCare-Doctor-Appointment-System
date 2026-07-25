@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { SelectItem } from "@/components/ui/select";
-import { Doctors } from "@/constants";
+import { Doctors, Theme } from "@/constants";
 import {
   createAppointment,
   updateAppointment,
@@ -135,11 +135,11 @@ export const AppointmentForm = ({
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1 space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className={Theme.form.wrapper}>
         {type === "create" && (
-          <section className="mb-12 space-y-4">
-            <h1 className="header text-dark-700">New Appointment</h1>
-            <p className="text-dark-700">
+          <section className={Theme.header.sectionHeader}>
+            <h1 className={Theme.header.pageHeader}>New Appointment</h1>
+            <p className={Theme.header.pageSubtitle}>
               Request a new appointment in 10 seconds.
             </p>
           </section>
@@ -162,11 +162,16 @@ export const AppointmentForm = ({
                       width={32}
                       height={32}
                       alt="doctor"
-                      className="rounded-full border border-dark-500"
+                      className={Theme.image.avatarMedium}
                       loading="lazy"
                       decoding="async"
                     />
-                    <p>{doctor.name}</p>
+                    <div className="flex flex-col text-left">
+                      <p className="font-medium text-white">Dr. {doctor.name}</p>
+                      {doctor.specialty && (
+                        <p className="text-xs text-dark-600">{doctor.specialty}</p>
+                      )}
+                    </div>
                   </div>
                 </SelectItem>
               ))}
@@ -179,7 +184,7 @@ export const AppointmentForm = ({
               label="Expected appointment date"
               showTimeSelect
               dateFormat="MM/dd/yyyy  -  h:mm aa"
-              iconClassName="mx-2 my-auto flex items-center justify-center"
+              iconClassName={Theme.form.iconWrapper}
             />
 
             <div

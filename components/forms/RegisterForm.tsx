@@ -18,6 +18,7 @@ import {
   GenderOptions,
   IdentificationTypes,
   PatientFormDefaultValues,
+  Theme,
 } from "@/constants";
 import { registerPatient } from "@/lib/actions/patient.actions";
 import { PatientFormValidation } from "@/lib/validation";
@@ -150,9 +151,9 @@ const RegisterForm = ({ user, patient }: RegisterFormProps) => {
         onSubmit={form.handleSubmit(onSubmit)}
         className="flex-1 space-y-12"
       >
-        <section className="space-y-4">
-          <h1 className="header text-dark-700">Welcome 👋</h1>
-          <p className="text-dark-700">Let us know more about yourself.</p>
+        <section className={Theme.header.sectionHeaderCompact}>
+          <h1 className={Theme.header.pageHeader}>Welcome 👋</h1>
+          <p className={Theme.header.pageSubtitle}>Let us know more about yourself.</p>
           {errorMessage && (
             <div className="mt-4 rounded-md border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-700">
               {errorMessage}
@@ -299,11 +300,16 @@ const RegisterForm = ({ user, patient }: RegisterFormProps) => {
                     width={32}
                     height={32}
                     alt="doctor"
-                    className="rounded-full border border-dark-500"
+                    className={Theme.image.avatarMedium}
                     loading="lazy"
                     decoding="async"
                   />
-                  <p>{doctor.name}</p>
+                  <div className="flex flex-col text-left">
+                    <p className="font-medium text-white">Dr. {doctor.name}</p>
+                    {doctor.specialty && (
+                      <p className="text-xs text-dark-600">{doctor.specialty}</p>
+                    )}
+                  </div>
                 </div>
               </SelectItem>
             ))}

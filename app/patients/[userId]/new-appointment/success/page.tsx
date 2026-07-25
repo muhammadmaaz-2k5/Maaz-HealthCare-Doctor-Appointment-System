@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
-import { Doctors } from "@/constants";
+import { Doctors, Theme } from "@/constants";
 import { getAppointment } from "@/lib/actions/appointment.actions";
 import { formatDateTime } from "@/lib/utils";
 const NewAppointmentButton = dynamic(
@@ -23,15 +23,15 @@ const RequestSuccess = async ({
   );
 
   return (
-    <div className=" flex h-screen max-h-screen px-[5%]">
+    <div className={Theme.layout.paddedScreen}>
       <div className="success-img">
         <Link href="/">
           <img
             src="/assets/icons/logo-full.svg"
             height={1000}
             width={1000}
-            alt="logo"
-            className="h-10 w-fit"
+            alt="MaazPulse Logo"
+            className={Theme.image.successLogo}
             style={{
               width: "auto",
               height: "auto",
@@ -43,7 +43,7 @@ const RequestSuccess = async ({
           />
         </Link>
 
-        <section className="flex flex-col items-center">
+        <section className={Theme.layout.flexCenter}>
           <img
             src="/assets/gifs/success.gif"
             height={300}
@@ -58,12 +58,12 @@ const RequestSuccess = async ({
             loading="eager"
             decoding="async"
           />
-          <h2 className="header mb-6 max-w-[600px] text-center text-dark-700">
-            Your <span className="text-green-500">appointment request</span> has
+          <h2 className={`${Theme.header.pageHeader} mb-6 max-w-[600px] text-center`}>
+            Your <span className={Theme.text.successAccent}>appointment request</span> has
             been successfully submitted!
           </h2>
-          <p className="text-dark-700">
-            We&apos;ll be in touch shortly to confirm.
+          <p className={Theme.header.pageSubtitle}>
+            We&apos;ll be in touch shortly to confirm with Dr. {doctor?.name}.
           </p>
         </section>
 
@@ -75,7 +75,7 @@ const RequestSuccess = async ({
               alt="doctor"
               width={100}
               height={100}
-              className="size-6"
+              className={Theme.image.avatarSmall}
               style={{
                 width: "auto",
                 height: "auto",
@@ -87,7 +87,12 @@ const RequestSuccess = async ({
               loading="lazy"
               decoding="async"
             />
-            <p className="whitespace-nowrap">Dr. {doctor?.name}</p>
+            <div>
+              <p className={Theme.text.doctorName}>Dr. {doctor?.name}</p>
+              {doctor?.specialty && (
+                <p className="text-12-regular text-dark-600">{doctor.specialty}</p>
+              )}
+            </div>
           </div>
           <div className="flex gap-2">
             <img
@@ -112,7 +117,7 @@ const RequestSuccess = async ({
 
         <NewAppointmentButton userId={userId} />
 
-        <p className="copyright">© 2024 CarePluse</p>
+        <p className={Theme.footer.copyrightSuccess}>© 2024 MaazPulse</p>
       </div>
     </div>
   );

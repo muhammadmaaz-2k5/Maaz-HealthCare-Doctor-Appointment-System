@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { Form } from "@/components/ui/form";
+import { Theme } from "@/constants";
 import { createUser } from "@/lib/actions/patient.actions";
 import { UserFormValidation } from "@/lib/validation";
 
@@ -71,10 +72,10 @@ export const PatientForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1 space-y-6">
-        <section className="mb-12 space-y-4">
-          <h1 className="header text-dark-700">Hi there 👋</h1>
-          <p className="text-dark-700">Get started with appointments.</p>
+      <form onSubmit={form.handleSubmit(onSubmit)} className={Theme.form.wrapper}>
+        <section className={Theme.header.sectionHeader}>
+          <h1 className={Theme.header.pageHeader}>Hi there 👋</h1>
+          <p className={Theme.header.pageSubtitle}>Get started with medical consultations.</p>
         </section>
         <CustomFormField
           fieldType={FormFieldType.INPUT}
@@ -84,7 +85,7 @@ export const PatientForm = () => {
           placeholder="John Doe"
           iconSrc="/assets/icons/user.svg"
           iconAlt="user"
-          iconClassName="mx-2 my-auto flex items-center justify-center"
+          iconClassName={Theme.form.iconWrapper}
         />
         <CustomFormField
           fieldType={FormFieldType.INPUT}
@@ -94,7 +95,7 @@ export const PatientForm = () => {
           placeholder="johndoe@gmail.com"
           iconSrc="/assets/icons/email.svg"
           iconAlt="email"
-          iconClassName="mx-2 my-auto flex items-center justify-center"
+          iconClassName={Theme.form.iconWrapper}
         />
         <CustomFormField
           fieldType={FormFieldType.PHONE_INPUT}
@@ -106,7 +107,7 @@ export const PatientForm = () => {
         <SubmitButton
           isLoading={isLoading || isPending}
           loadingText="Continuing..."
-          className={`shad-primary-btn w-full${isLoading || isPending ? " cursor-not-allowed opacity-50" : ""}`}
+          className={`${Theme.button.primary}${isLoading || isPending ? " " + Theme.button.primaryDisabled : ""}`}
         >
           {isLoading || isPending ? "Continuing..." : "Get Started"}
         </SubmitButton>

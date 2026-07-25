@@ -4,7 +4,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import React from "react";
 
-import { Doctors } from "@/constants";
+import { Doctors, Theme } from "@/constants";
 import { formatDateTime } from "@/lib/utils";
 import { Appointment } from "@/types/appwrite.types";
 
@@ -30,7 +30,7 @@ export const Columns = ({
   {
     header: "#",
     cell: ({ row }) => {
-      return <p className="text-14-medium ">{row.index + 1}</p>;
+      return <p className={Theme.text.tableHeader}>{row.index + 1}</p>;
     },
   },
   {
@@ -43,7 +43,7 @@ export const Columns = ({
         <div className="text-14-medium cursor-pointer">
           <div
             onClick={() => openModal(appointment.patient.$id)}
-            className="inline-block rounded-md p-3 text-white transition-colors duration-200 hover:bg-gray-800 hover:text-gray-300"
+            className={Theme.text.tablePatientLink}
           >
             <p>{appointment.patient.name}</p>
           </div>
@@ -75,7 +75,7 @@ export const Columns = ({
     cell: ({ row }) => {
       const appointment = row.original;
       return (
-        <p className="text-14-regular min-w-[100px]">
+        <p className={Theme.text.tableCell}>
           {formatDateTime(appointment.schedule).dateTime}
         </p>
       );
@@ -98,9 +98,14 @@ export const Columns = ({
             alt="doctor"
             width={100}
             height="auto"
-            className="size-8"
+            className={Theme.image.avatarMedium}
           />
-          <p className="whitespace-nowrap">Dr. {doctor?.name}</p>
+          <div>
+            <p className={Theme.text.doctorName}>Dr. {doctor?.name || appointment.primaryPhysician}</p>
+            {doctor?.specialty && (
+              <p className="text-12-regular text-dark-600">{doctor.specialty}</p>
+            )}
+          </div>
         </div>
       );
     },
@@ -119,7 +124,7 @@ export const Columns = ({
             appointment={appointment}
             type="schedule"
             title="Schedule Appointment"
-            description="Please confirm the following details to schedule."
+            description="Please confirm the following medical details to schedule."
             reloadAppointments={reloadAppointments}
           />
           <AppointmentModal
@@ -128,7 +133,7 @@ export const Columns = ({
             appointment={appointment}
             type="cancel"
             title="Cancel Appointment"
-            description="Are you sure you want to cancel your appointment?"
+            description="Are you sure you want to cancel your medical appointment?"
             reloadAppointments={reloadAppointments}
           />
         </div>

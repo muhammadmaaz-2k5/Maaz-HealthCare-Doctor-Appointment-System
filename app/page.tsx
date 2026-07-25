@@ -17,6 +17,7 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
+import { Theme } from "@/constants";
 const AdminLink = dynamic(() => import("@/components/AdminLink"), {
   ssr: false,
 });
@@ -67,18 +68,18 @@ const Home = ({ searchParams }: SearchParamProps) => {
   };
 
   return (
-    <div className="flex h-screen max-h-screen">
+    <div className={Theme.layout.screen}>
       {isAdmin && <PasskeyModal />}
 
-      <section className="remove-scrollbar container my-auto">
-        <div className="sub-container max-w-[496px]">
+      <section className={Theme.layout.container}>
+        <div className={Theme.layout.subContainer}>
           <Link href="/">
             <img
               src="/assets/icons/logo-full.svg"
               width={200}
               height={40}
               alt="MaazPulse Logo"
-              className="mb-12 h-10 w-fit"
+              className={Theme.header.logo}
               loading="eager"
               decoding="async"
               style={{ height: "auto", width: "auto" }}
@@ -87,14 +88,14 @@ const Home = ({ searchParams }: SearchParamProps) => {
 
           <PatientForm />
 
-          <div className="mt-8 flex flex-col items-center gap-2">
-            <span className="text-sm text-dark-600">
+          <div className={Theme.form.returningPromptWrapper}>
+            <span className={Theme.text.muted}>
               Already registered? or already made an appointment before? Then
               click this below button, Thank you.
             </span>
             <Button
               variant="outline"
-              className={`shad-primary-btn w-full${isPending ? " cursor-not-allowed opacity-50" : ""}`}
+              className={`${Theme.button.primary}${isPending ? " " + Theme.button.primaryDisabled : ""}`}
               onClick={() => {
                 startTransition(() => setOpen(true));
               }}
@@ -105,18 +106,18 @@ const Home = ({ searchParams }: SearchParamProps) => {
             </Button>
           </div>
 
-          <div className="text-14-regular mt-20 flex justify-between">
-            <p className="justify-items-end text-dark-600 xl:text-left">
+          <div className={Theme.footer.wrapper}>
+            <p className={Theme.footer.copyright}>
               © 2024 MaazPulse
             </p>
-            <AdminLink className="text-green-500" />
+            <AdminLink className={Theme.footer.adminLink} />
           </div>
         </div>
       </section>
 
       {/* Returning Patient Dialog */}
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-[400px]">
+        <DialogContent className={Theme.card.dialogContent}>
           <DialogHeader>
             <DialogTitle>Returning Patient</DialogTitle>
           </DialogHeader>
@@ -127,13 +128,13 @@ const Home = ({ searchParams }: SearchParamProps) => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="text-white"
+              className={Theme.form.input}
             />
-            {error && <p className="text-xs text-red-500">{error}</p>}
+            {error && <p className={Theme.text.error}>{error}</p>}
             <DialogFooter>
               <Button
                 type="submit"
-                className={`shad-primary-btn w-full${loading || isPending ? " cursor-not-allowed opacity-50" : ""}`}
+                className={`${Theme.button.primary}${loading || isPending ? " " + Theme.button.primaryDisabled : ""}`}
                 disabled={loading || isPending}
               >
                 {loading || isPending ? "Continuing..." : "Continue"}
@@ -148,7 +149,7 @@ const Home = ({ searchParams }: SearchParamProps) => {
         width={800}
         height={600}
         alt="Onboarding"
-        className="side-img max-w-[50%]"
+        className={Theme.image.sideHalf}
         loading="eager"
         decoding="async"
         style={{ height: "auto", width: "auto" }}

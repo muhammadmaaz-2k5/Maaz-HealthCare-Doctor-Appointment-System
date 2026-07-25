@@ -4,22 +4,23 @@
 import Link from "next/link";
 
 import { AppointmentForm } from "@/components/forms/AppointmentForm";
+import { Theme } from "@/constants";
 import { getPatient } from "@/lib/actions/patient.actions";
 
 const Appointment = async ({ params: { userId } }: SearchParamProps) => {
   const patient = await getPatient(userId);
 
   return (
-    <div className="flex h-screen max-h-screen">
-      <section className="remove-scrollbar container my-auto">
-        <div className="sub-container max-w-[860px] flex-1 justify-between">
+    <div className={Theme.layout.screen}>
+      <section className={Theme.layout.container}>
+        <div className={Theme.layout.subContainerLarge}>
           <Link href="/">
             <img
               src="/assets/icons/logo-full.svg"
               width={200}
               height={40}
               alt="MaazPulse Logo"
-              className="mb-12 h-10 w-fit"
+              className={Theme.header.logo}
               loading="eager"
               decoding="async"
               style={{ height: "auto", width: "auto" }}
@@ -32,7 +33,7 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
             type="create"
           />
 
-          <p className="copyright mt-10 py-12">© 2024 MaazPulse</p>
+          <p className={Theme.footer.copyrightAppointment}>© 2024 MaazPulse</p>
         </div>
       </section>
 
@@ -41,7 +42,7 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
         height={1500}
         width={1500}
         alt="appointment"
-        className="side-img max-w-[390px] bg-bottom"
+        className={Theme.image.sideBottom}
       />
     </div>
   );

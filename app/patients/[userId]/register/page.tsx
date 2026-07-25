@@ -4,6 +4,7 @@
 import Link from "next/link";
 
 import RegisterForm from "@/components/forms/RegisterForm";
+import { Theme } from "@/constants";
 import { getPatient, getUser } from "@/lib/actions/patient.actions";
 
 const Register = async ({ params: { userId } }: SearchParamProps) => {
@@ -18,8 +19,8 @@ const Register = async ({ params: { userId } }: SearchParamProps) => {
 
   if (!user) {
     return (
-      <div className="flex h-screen items-center justify-center">
-        <div className="mx-auto max-w-md rounded-md border border-red-300 bg-red-50 px-6 py-8 text-center text-lg text-red-700">
+      <div className={Theme.layout.centeredError}>
+        <div className={Theme.card.errorBox}>
           <p className="mb-2 font-semibold">User not found</p>
           <p className="mb-4">
             The account associated with this patient record no longer exists.
@@ -31,16 +32,16 @@ const Register = async ({ params: { userId } }: SearchParamProps) => {
   }
 
   return (
-    <div className="flex h-screen max-h-screen">
+    <div className={Theme.layout.screen}>
       <section className="remove-scrollbar container">
-        <div className="sub-container max-w-[860px] flex-1 flex-col py-10">
+        <div className={Theme.layout.subContainerRegister}>
           <Link href="/">
             <img
               src="/assets/icons/logo-full.svg"
               width={200}
               height={40}
               alt="MaazPulse Logo"
-              className="mb-12 h-10 w-fit"
+              className={Theme.header.logo}
               loading="eager"
               decoding="async"
               style={{ height: "auto", width: "auto" }}
@@ -50,7 +51,7 @@ const Register = async ({ params: { userId } }: SearchParamProps) => {
           {/* Pass mergedUser for prefill/edit */}
           <RegisterForm user={mergedUser} patient={patient} />
 
-          <p className="copyright py-12">© 2024 CarePluse</p>
+          <p className={Theme.footer.copyrightSimple}>© 2024 MaazPulse</p>
         </div>
       </section>
 
@@ -59,7 +60,7 @@ const Register = async ({ params: { userId } }: SearchParamProps) => {
         height={1000}
         width={1000}
         alt="patient"
-        className="side-img max-w-[390px]"
+        className={Theme.image.sideStandard}
         loading="eager"
         decoding="async"
       />
